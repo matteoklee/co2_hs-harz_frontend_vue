@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-50 dark:bg-gray-900">
+  <footer class="bg-white dark:bg-gray-900">
     <div class="w-full">
       <div class="">
         <ul class="flex flex-wrap justify-center items-center p-4 text-sm font-normal text-green-500 dark:text-gray-400">
