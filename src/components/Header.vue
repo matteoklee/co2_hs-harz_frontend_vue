@@ -42,8 +42,8 @@
             </a>
           </li>
           <li>
-            <a href="/tutorial" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-              <div class="font-semibold">Tutorial/Anleitung</div>
+            <a href="/children" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+              <div class="font-semibold">CO2-Rechner für Kids</div>
               <span class="text-sm text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed.</span>
             </a>
           </li>
