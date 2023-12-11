@@ -62,7 +62,7 @@
 <script>
 import InfoSlide from "./InfoSlide.vue";
 export default {
-  name: "CO2Information",
+  name: "Information",
   components: {InfoSlide}
 }
 </script>
