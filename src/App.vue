@@ -6,7 +6,7 @@ import Footer from "./components/Footer.vue";
 <template>
   <div class="flex flex-col min-h-screen bg-white">
     <Header></Header>
-    <router-view class="flex-grow"></router-view>
+    <router-view class="flex-grow"></router-view> <!-- bg-[url('./assets/background.jpg')]/30 -->
     <Footer></Footer>
   </div>
 </template>

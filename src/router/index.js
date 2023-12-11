@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Calculator from "../views/Calculator.vue";
+import KidsHome from "../views/Children.vue";
 
 const routes = [
     {
@@ -19,6 +20,11 @@ const routes = [
         path: "/calculation",
         name: "Calculator",
         component: Calculator,
+    },
+    {
+        path: "/children",
+        name: "KidsHome",
+        component: KidsHome,
     },
 ];
 
