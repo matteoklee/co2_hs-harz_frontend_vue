@@ -1,7 +1,7 @@
 <template>
 
   <div class="flex items-center justify-center gap-10 max-w-screen-md">
-    <img class="md:w-48 md:h-96 w-24 h-48 rounded-full" src="../assets/bilbo_ohneKreis.png" alt="Kater Bilbo">
+    <img class="md:w-48 md:h-72 w-24 h-48 rounded-full" src="../assets/bilbo_ohneKreis.png" alt="Kater Bilbo">
     <div class="flex flex-col w-full leading-1.5 p-4 border-gray-200 bg-gray-50 shadow-lg rounded-e-xl rounded-es-xl dark:bg-gray-700">
       <div class="flex items-center space-x-2 rtl:space-x-reverse">
         <span class="md:text-lg text-sm font-semibold text-gray-900 dark:text-white">
