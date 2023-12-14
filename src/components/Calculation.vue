@@ -133,7 +133,7 @@
         -->
       </div>
 
-      <div v-if="true" class="col-span-2 flex justify-center lg:flex-row flex-col ">
+      <div class="col-span-2 flex justify-center lg:flex-row flex-col ">
         <div class="relative lg:w-auto w-full pl-10 mt-2 text-sm text-red-600 dark:text-red-500 relative"> <div v-if="startLocationInvalid">Erforderlich (start)</div> </div>
         <div class="relative lg:w-auto w-full pl-10 mt-2 text-sm text-red-600 dark:text-red-500 relative"> <div v-if="endLocationInvalid">Erforderlich (end)</div> </div>
         <div class="relative lg:w-auto w-full pl-10 mt-2 text-sm text-red-600 dark:text-red-500 relative"> <div v-if="transportMediumNameInvalid">Erforderlich (transName)</div> </div>
@@ -145,7 +145,7 @@
     </div>
 
     <div class="sm:col-span-2 text-white flex items-center justify-end">
-      <button @click="resetForm" class="inline-flex items-center p-2 px-4 mx-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-orange-600">
+      <button type="button" @click="resetForm" class="inline-flex items-center p-2 px-4 mx-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-orange-600">
         Eingaben zurücksetzen
       </button>
       <button type="submit" class="inline-flex items-center p-2 px-4 text-sm font-medium text-center text-white bg-green-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-green-800">
