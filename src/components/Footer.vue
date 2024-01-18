@@ -24,8 +24,8 @@
           </li>
         </ul>
       </div>
-      <div class="bg-green-700 py-4 flex justify-center items-center">
-        <span class="text-sm text-white dark:text-gray-400">© 2023 Hochschule Harz. All Rights Reserved.</span>
+      <div class="bg-gray-50 py-4 flex justify-center items-center"><!-- bg-green-700 -->
+        <span class="text-sm text-black">© 2024 Hochschule Harz. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
