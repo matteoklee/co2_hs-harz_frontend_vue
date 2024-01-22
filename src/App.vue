@@ -1,6 +1,19 @@
 <script setup>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import {onBeforeUnmount, onMounted} from "vue";
+
+const startTime = Date.now()
+
+onMounted(() => {
+  sessionStorage.visitorTotalTime = 0;
+  sessionStorage.visitorSubpages = [];
+  sessionStorage.visitorButtons = [];
+});
+onBeforeUnmount(() =>{
+  sessionStorage.visitorTotalTime = Date.now() - startTime;
+  //TODO send sessionStorage data to server
+})
 </script>
 
 <template>

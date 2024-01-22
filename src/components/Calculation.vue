@@ -109,7 +109,7 @@
           </option>
         </select>
         -->
-        <div class="relative" v-if="isTransportMediumFuelConsumptionAvailable()">
+        <div class="relative" v-if="this.transportMediumCustomConsumption && this.transportMediumName !== 'default' && this.transportMediumFuel !== 'default'">
           <input v-model="transportMediumFuelConsumption" type="text" name="consumption" id="consumption"
                  class="pl-10 rounded-lg lg:w-auto w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-green-600 focus:border-green-600 mb-4 me-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="7.2" required="">
           <div class="absolute inset-y-4 start-0 top-0 flex items-center ps-3.5 pt-0 pointer-events-none">
@@ -139,6 +139,8 @@
 <script>
 import api from "../api/api";
 import SaveEmissionModal from "./SaveEmissionModal.vue";
+import {saveButton} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
 
 export default {
   name: "Calculation",
@@ -153,6 +155,8 @@ export default {
       calculatedEmission: 0,
       transportMediumFuelConsumption: 0,
       transportMediumCustomConsumption: false,
+
+      calculateClicked: 0,
     }
   },
   methods: {
@@ -233,9 +237,6 @@ export default {
     isTransportMediumSizeAvailable() {
       return this.transportMediumFuel !== 'default' && this.transportMediumName === 'car' && this.transportMediumCustomConsumption === false;
     },
-    isTransportMediumFuelConsumptionAvailable() {
-      return this.transportMediumCustomConsumption === true && this.transportMediumName !== 'default' && this.transportMediumFuel !== 'default';
-    },
     validateInput() {
       if(this.startLocation && this.endLocation) {
         if(this.transportMediumName !== 'default') {
@@ -258,6 +259,9 @@ export default {
         console.error("transportMediumName must not be null.");
         return;
       }
+
+      this.calculateClicked++;
+
       const start = this.startLocation;
       const end = this.endLocation;
 
@@ -293,6 +297,55 @@ export default {
         console.error("Error saving emission: ", error);
       }
     }
+  },
+  mounted() {
+    if( sessionStorage.startLocation){
+      this.startLocation = sessionStorage.startLocation;
+    };
+    if( sessionStorage.endLocation){
+      this.endLocation = sessionStorage.endLocation;
+    };
+    if(sessionStorage.transportMediumName){
+      this.transportMediumName = sessionStorage.transportMediumName
+    };
+    if(sessionStorage.transportMediumSize){
+      this.transportMediumSize = sessionStorage.transportMediumSize
+    };
+    if(sessionStorage.transportMediumFuel){
+      this.transportMediumFuel = sessionStorage.transportMediumFuel
+    };
+    if( sessionStorage.transportMediumFuelConsumption){
+      this.transportMediumFuelConsumption = sessionStorage.transportMediumFuelConsumption
+    };
+    if(sessionStorage.transportMediumCustomConsumption){
+      this.transportMediumCustomConsumption = sessionStorage.transportMediumCustomConsumption
+    };
+  },
+  watch: {
+    startLocation(){
+      sessionStorage.startLocation = this.startLocation;
+    },
+    endLocation(){
+      sessionStorage.endLocation = this.endLocation;
+    },
+    transportMediumName(){
+      sessionStorage.transportMediumName = this.transportMediumName;
+    },
+    transportMediumSize(){
+      sessionStorage.transportMediumSize = this.transportMediumSize;
+    },
+    transportMediumFuel(){
+      sessionStorage.transportMediumFuel = this.transportMediumFuel;
+    },
+    transportMediumFuelConsumption(){
+      sessionStorage.transportMediumFuelConsumption = this.transportMediumFuelConsumption;
+    },
+    transportMediumCustomConsumption(){
+      sessionStorage.transportMediumCustomConsumption = this.transportMediumCustomConsumption;
+    }
+  },
+  beforeUnmount() {
+    saveButton(getCurrentInstance().type.name, "calculate", this.calculateClicked);
   }
 }
 </script>

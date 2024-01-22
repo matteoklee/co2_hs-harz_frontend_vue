@@ -79,6 +79,8 @@ import UserFeedback from "../components/UserFeedback.vue";
 import SaveEmissionModal from "../components/SaveEmissionModal.vue";
 
 import {initFlowbite} from "flowbite";
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
 export default {
   name: "Calculator",
   components: {UserFeedback, Calculation, Skeleton, SaveEmissionModal},
@@ -90,6 +92,8 @@ export default {
       isFeedbackActive: false,
       isSaveEmissionModalActive: false,
       isLoading: false,
+
+      startTime: 0,
     }
   },
   methods: {
@@ -118,7 +122,11 @@ export default {
     setTimeout(() => {
       //this.isLoading = false;
     }, 1000);
+    this.startTime = Date.now();
   },
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name, this.startTime);
+  }
 }
 </script>
 

@@ -28,8 +28,22 @@
 </template>
 
 <script>
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
+
 export default {
-  name: "Home"
+  name: "Home",
+  data(){
+    return {
+      startTime: 0
+    }
+  },
+  mounted() {
+    this.startTime = Date.now()
+  },
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name, this.startTime)
+  }
 }
 </script>
 
