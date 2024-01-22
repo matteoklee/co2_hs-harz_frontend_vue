@@ -306,19 +306,19 @@ export default {
       this.endLocation = sessionStorage.endLocation;
     };
     if(sessionStorage.transportMediumName){
-      this.transportMediumName = sessionStorage.transportMediumName
+      this.transportMediumName = sessionStorage.transportMediumName;
     };
     if(sessionStorage.transportMediumSize){
-      this.transportMediumSize = sessionStorage.transportMediumSize
+      this.transportMediumSize = sessionStorage.transportMediumSize;
     };
     if(sessionStorage.transportMediumFuel){
-      this.transportMediumFuel = sessionStorage.transportMediumFuel
+      this.transportMediumFuel = sessionStorage.transportMediumFuel;
     };
     if( sessionStorage.transportMediumFuelConsumption){
-      this.transportMediumFuelConsumption = sessionStorage.transportMediumFuelConsumption
+      this.transportMediumFuelConsumption = sessionStorage.transportMediumFuelConsumption;
     };
     if(sessionStorage.transportMediumCustomConsumption){
-      this.transportMediumCustomConsumption = sessionStorage.transportMediumCustomConsumption
+      this.transportMediumCustomConsumption = sessionStorage.transportMediumCustomConsumption;
     };
   },
   watch: {
