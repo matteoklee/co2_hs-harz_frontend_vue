@@ -9,6 +9,7 @@ onMounted(() => {
   sessionStorage.visitorTotalTime = 0;
   sessionStorage.visitorSubpages = [];
   sessionStorage.visitorButtons = [];
+  console.log(sessionStorage)
 });
 onBeforeUnmount(() =>{
   sessionStorage.visitorTotalTime = Date.now() - startTime;
