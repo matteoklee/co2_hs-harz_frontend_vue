@@ -46,14 +46,6 @@ import {getCurrentInstance} from "vue";
 
 export default {
   name: "Login",
-  data(){
-    return {
-      startTime: 0
-    }
-  },
-  mounted() {
-    this.startTime = Date.now();
-  },
   beforeUnmount() {
     saveSubpage(getCurrentInstance().type.name);
   }

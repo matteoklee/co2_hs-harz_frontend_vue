@@ -10,8 +10,9 @@ onMounted(() => {
 });
 onBeforeUnmount(() =>{
   let time = Date.now() - startTime;
-  if(sessionStorage.visitorTotalTime != null)
-    time += sessionStorage.visitorTotalTime;
+  if(!sessionStorage.visitorTotalTime)
+    sessionStorage.visitorTotalTime = 0;
+  time += sessionStorage.visitorTotalTime;
   sessionStorage.visitorTotalTime = time;
   //TODO send sessionStorage data to server
 })

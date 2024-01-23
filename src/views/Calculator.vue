@@ -122,7 +122,6 @@ export default {
     setTimeout(() => {
       //this.isLoading = false;
     }, 1000);
-    this.startTime = Date.now();
   },
   beforeUnmount() {
     saveSubpage(getCurrentInstance().type.name);

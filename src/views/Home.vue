@@ -35,13 +35,9 @@ export default {
   name: "Home",
   data(){
     return {
-      startTime: 0,
       childClicked: 0,
       adultClicked: 0,
     }
-  },
-  mounted() {
-    this.startTime = Date.now();
   },
   beforeUnmount() {
     saveSubpage(getCurrentInstance().type.name);
