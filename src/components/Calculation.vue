@@ -125,7 +125,7 @@
     </div>
 
     <div class="sm:col-span-2 text-white flex items-center justify-end">
-      <button @click="resetForm" class="inline-flex items-center p-2 px-4 mx-2 text-sm font-medium border text-center text-gray-500 bg-white hover:bg-gray-100 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:text-gray-900">
+      <button @click="resetForm; resetClicked++" class="inline-flex items-center p-2 px-4 mx-2 text-sm font-medium border text-center text-gray-500 bg-white hover:bg-gray-100 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:text-gray-900">
         Eingaben zurücksetzen
       </button>
       <button type="submit" class="inline-flex items-center p-2 px-4 text-sm font-medium text-center text-white bg-green-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-green-800">
@@ -157,6 +157,7 @@ export default {
       transportMediumCustomConsumption: false,
 
       calculateClicked: 0,
+      resetClicked: 0,
     }
   },
   methods: {
@@ -346,6 +347,7 @@ export default {
   },
   beforeUnmount() {
     saveButton(getCurrentInstance().type.name, "calculate", this.calculateClicked);
+    saveButton(getCurrentInstance().type.name, "reset", this.resetClicked);
   }
 }
 </script>

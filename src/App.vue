@@ -6,13 +6,13 @@ import {onBeforeUnmount, onMounted} from "vue";
 const startTime = Date.now()
 
 onMounted(() => {
-  sessionStorage.visitorTotalTime = 0;
-  sessionStorage.visitorSubpages = JSON.stringify([]);
-  sessionStorage.visitorButtons = JSON.stringify([]);
   console.log(sessionStorage)
 });
 onBeforeUnmount(() =>{
-  sessionStorage.visitorTotalTime = Date.now() - startTime;
+  let time = Date.now() - startTime;
+  if(sessionStorage.visitorTotalTime != null)
+    time += sessionStorage.visitorTotalTime;
+  sessionStorage.visitorTotalTime = time;
   //TODO send sessionStorage data to server
 })
 </script>

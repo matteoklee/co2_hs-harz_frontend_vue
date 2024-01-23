@@ -125,7 +125,7 @@ export default {
     this.startTime = Date.now();
   },
   beforeUnmount() {
-    saveSubpage(getCurrentInstance().type.name, this.startTime);
+    saveSubpage(getCurrentInstance().type.name);
   }
 }
 </script>
