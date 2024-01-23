@@ -43,7 +43,6 @@ export default {
   },
   beforeUnmount() {
     saveSubpage(getCurrentInstance().type.name, this.startTime);
-    console.log(sessionStorage)
   }
 }
 </script>

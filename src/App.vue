@@ -7,8 +7,8 @@ const startTime = Date.now()
 
 onMounted(() => {
   sessionStorage.visitorTotalTime = 0;
-  sessionStorage.visitorSubpages = [];
-  sessionStorage.visitorButtons = [];
+  sessionStorage.visitorSubpages = JSON.stringify([]);
+  sessionStorage.visitorButtons = JSON.stringify([]);
   console.log(sessionStorage)
 });
 onBeforeUnmount(() =>{
