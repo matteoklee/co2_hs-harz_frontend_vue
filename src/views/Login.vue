@@ -29,7 +29,7 @@
               </div>
               <a href="#" class="text-sm font-medium text-green-600 hover:underline dark:text-primary-500">Passwort vergessen?</a>
             </div>
-            <a href="/" type="submit" class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Anmelden</a>
+            <button @click="setAdmin" type="submit" class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Anmelden</button>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
               Du hast noch keinen Account? <a href="#" class="font-medium text-green-600 hover:underline dark:text-primary-500">Registrieren</a>
             </p>
@@ -42,7 +42,14 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  methods: {
+    setAdmin() {
+      sessionStorage.setItem("isAdmin", "true");
+      window.location.href = "/dashboard";
+      console.log("LOGGED IN.")
+    }
+  }
 }
 </script>
 

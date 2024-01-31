@@ -28,7 +28,8 @@
         <Information></Information>
       </div>
       <div class="hidden p-4 rounded-lg dark:bg-gray-800" id="calculation" role="tabpanel">
-        <Calculation @calculatedEmission="updateEmission"></Calculation>
+        <!-- <Calculation @calculatedEmission="updateEmission"></Calculation> -->
+        <CalculationNew @calculatedEmission="updateEmission"></CalculationNew>
         <p class="mt-8 text-xl font-bold text-green-500">{{ this.calculatedEmission }}</p>
       </div>
     </div>
@@ -40,12 +41,13 @@
 <script>
 import Bilbo from "./Bilbo.vue";
 import Information from "./Information.vue";
-import Calculation from "./Calculation.vue";
+import Calculation from "./Calculation.vue"
+import CalculationNew from "./CalculationNew.vue";
 
 import {initFlowbite} from "flowbite";
 export default {
   name: "Tutorial",
-  components: {Calculation, Information, Bilbo},
+  components: {Calculation, Information, Bilbo, CalculationNew},
   data() {
     return {
       calculatedEmission: 0,

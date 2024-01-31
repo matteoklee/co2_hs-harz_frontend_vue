@@ -37,7 +37,8 @@
           und des gewünschten Transportmittels.</h2>
         <h2 class="mb-4 mt-8 text-xl font-bold text-gray-900 dark:text-white">Wie und wohin wollen Sie fahren?</h2>
 
-        <Calculation @calculatedEmission="updateEmission"></Calculation>
+        <!-- <Calculation @calculatedEmission="updateEmission"></Calculation> -->
+        <CalculationNew @calculatedEmission="updateEmission"></CalculationNew>
 
         <div class="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-4">
           <div class="col-span-1 bg-green-600 flex justify-center items-center">
@@ -77,11 +78,12 @@ import Skeleton from "../components/Skeleton.vue";
 import Calculation from "../components/Calculation.vue";
 import UserFeedback from "../components/UserFeedback.vue";
 import SaveEmissionModal from "../components/SaveEmissionModal.vue";
+import CalculationNew from "../components/CalculationNew.vue";
 
 import {initFlowbite} from "flowbite";
 export default {
   name: "Calculator",
-  components: {UserFeedback, Calculation, Skeleton, SaveEmissionModal},
+  components: {UserFeedback, Calculation, Skeleton, SaveEmissionModal, CalculationNew},
   data() {
     return {
       nickname:"",
