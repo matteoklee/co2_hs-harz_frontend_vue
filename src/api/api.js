@@ -61,10 +61,10 @@ export async function sendStatistic(){
             'visitorStats': []
         };
         data.visitorStats.push({
-                'statisticEntityType': 'totalDuration',
-                'totalDurationEntity': 'totalDuration',
-                'totalDurationEntityAmount': sessionStorage.getItem('visitorTotalTime')
-            });
+            'statisticEntityType': 'totalDuration',
+            'totalDurationEntity': 'totalDuration',
+            'totalDurationEntityAmount': sessionStorage.getItem('visitorTotalTime')
+        });
         let subpages = JSON.parse(sessionStorage.getItem('visitorSubpages'));
         for(let i = 0; i < subpages.length; i++){
             data.visitorStats.push({
@@ -75,12 +75,16 @@ export async function sendStatistic(){
         };
         let buttons = JSON.parse(sessionStorage.getItem('visitorButtons'));
         for(let i = 0; i < buttons.length; i++){
-            data.visitorStats.push({
-                'statisticEntityType': 'buttonClick',
-                'buttonClickEntityName': buttons[i].button,
-                'buttonClickEntityAmount': buttons[i].clicks,
-            })
+            if(buttons[i].clicks > 0) {
+                data.visitorStats.push({
+                    'statisticEntityType': 'buttonClick',
+                    'buttonClickEntityName': buttons[i].button,
+                    'buttonClickEntityAmount': buttons[i].clicks,
+                });
+            }
+
         }
+        console.log(data);
         const result = await makeRequest('statistics','POST', data);
         return result;
     } catch (error){
