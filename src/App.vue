@@ -2,19 +2,20 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import {onBeforeUnmount, onMounted} from "vue";
-
-const startTime = Date.now()
+import {sendStatistic} from "./api/api";
 
 onMounted(() => {
-  console.log(sessionStorage)
+  if(!sessionStorage.startTime){
+    sessionStorage.startTime = Date.now();
+  }
 });
 onBeforeUnmount(() =>{
-  let time = Date.now() - startTime;
+  let time = Date.now() - sessionStorage.startTime;
   if(!sessionStorage.visitorTotalTime)
     sessionStorage.visitorTotalTime = 0;
   time += sessionStorage.visitorTotalTime;
   sessionStorage.visitorTotalTime = time;
-  //TODO send sessionStorage data to server
+  sendStatistic()
 })
 </script>
 
