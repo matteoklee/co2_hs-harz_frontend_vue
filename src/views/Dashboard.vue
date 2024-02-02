@@ -2,7 +2,7 @@
   <h1 class="text-lg text-center">Dashboard</h1>
 
   <div class="p-4">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 lg:block hidden">
       <div class="grid grid-cols-3 gap-4 mb-4">
 
         <div class="flex items-center justify-center h-auto rounded bg-gray-50 p-4">

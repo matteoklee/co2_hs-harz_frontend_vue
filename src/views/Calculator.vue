@@ -50,6 +50,7 @@
 
           <div class="col-span-1">
             <img class="h-auto max-w-full" src="/src/assets/maps.png" alt="Maps">
+            <div id="map"></div>
           </div>
 
           <div class="col-span-1 flex flex-col justify-center items-center">
@@ -68,8 +69,6 @@
   <UserFeedback :isActive="isFeedbackActive"></UserFeedback>
   <SaveEmissionModal :isActive="isSaveEmissionModalActive" @closeModal="closeModal()"></SaveEmissionModal>
 
-
-
 </template>
 
 <script>
@@ -81,6 +80,8 @@ import SaveEmissionModal from "../components/SaveEmissionModal.vue";
 import CalculationNew from "../components/CalculationNew.vue";
 
 import {initFlowbite} from "flowbite";
+
+
 export default {
   name: "Calculator",
   components: {UserFeedback, Calculation, Skeleton, SaveEmissionModal, CalculationNew},

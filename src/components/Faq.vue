@@ -4,7 +4,7 @@
       <div class="max-w-screen-lg p-4">
 
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Hilfe</h2>
-        <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400 text-center">Die häufigsten Fragen run dum das Thema CO2 und der Berechnung einer CO2-Emission.</p>
+        <p class="font-light text-gray-500 mb-8 sm:text-xl dark:text-gray-400 text-center">Die häufigsten Fragen run dum das Thema CO2 und der Berechnung einer CO2-Emission.</p>
 
 
         <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-green-100 dark:bg-gray-800 text-green-600 dark:text-white">
@@ -144,7 +144,7 @@ export default {
   methods: {
 
   },
-  created() {
+  mounted() {
     initFlowbite();
   }
 }

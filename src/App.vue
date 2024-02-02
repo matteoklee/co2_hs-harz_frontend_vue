@@ -45,7 +45,6 @@
 import Navigation from "./components/Navigation.vue";
 import Footer from "./components/Footer.vue";
 
-import {initFlowbite} from "flowbite";
 export default {
   name: "App",
   components: {Navigation, Footer},
@@ -56,7 +55,6 @@ export default {
   },
   mounted() {
     this.isAdmin = sessionStorage.getItem("isAdmin") === "true";
-    initFlowbite();
   },
 }
 </script>
