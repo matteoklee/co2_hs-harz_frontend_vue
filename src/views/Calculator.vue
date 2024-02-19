@@ -80,7 +80,8 @@ import SaveEmissionModal from "../components/SaveEmissionModal.vue";
 import CalculationNew from "../components/CalculationNew.vue";
 
 import {initFlowbite} from "flowbite";
-
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
 
 export default {
   name: "Calculator",
@@ -93,6 +94,8 @@ export default {
       isFeedbackActive: false,
       isSaveEmissionModalActive: false,
       isLoading: false,
+
+      startTime: 0,
     }
   },
   methods: {
@@ -122,6 +125,9 @@ export default {
       //this.isLoading = false;
     }, 1000);
   },
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name);
+  }
 }
 </script>
 

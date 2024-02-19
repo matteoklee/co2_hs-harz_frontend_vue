@@ -19,9 +19,14 @@
 
 <script>
 import Tutorial from "../components/Tutorial.vue";
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
 export default {
   name: "KidsHome",
-  components: {Tutorial}
+  components: {Tutorial},
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name);
+  }
 }
 </script>
 

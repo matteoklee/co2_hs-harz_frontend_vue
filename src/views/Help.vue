@@ -4,9 +4,14 @@
 
 <script>
 import Faq from "../components/Faq.vue";
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
 export default {
   name: "Help",
-  components: { Faq }
+  components: { Faq },
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name);
+  }
 }
 </script>
 

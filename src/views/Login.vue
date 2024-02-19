@@ -41,8 +41,14 @@
 </template>
 
 <script>
+import {saveSubpage} from "../scripts/saveToSessionStorage";
+import {getCurrentInstance} from "vue";
+
 export default {
   name: "Login",
+  beforeUnmount() {
+    saveSubpage(getCurrentInstance().type.name);
+  },
   methods: {
     setAdmin() {
       sessionStorage.setItem("isAdmin", "true");
