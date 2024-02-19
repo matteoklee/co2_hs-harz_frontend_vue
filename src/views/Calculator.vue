@@ -50,7 +50,7 @@
 
           <div class="col-span-1">
             <img class="h-auto max-w-full" src="/src/assets/maps.png" alt="Maps">
-            <div id="map"></div>
+            <!--<div id="map"></div> -->
           </div>
 
           <div class="col-span-1 flex flex-col justify-center items-center">

@@ -6,7 +6,6 @@
         <img src="src/assets/wernigerode-logo.png" class="md:h-16 sm:h-8 h-8 p-1" alt="Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
       </router-link>
-
       <!--  -->
       <button data-collapse-toggle="mega-menu-full-dropdown" type="button" class="ml-auto border-x inline-flex items-center px-4 w-auto h-full justify-center text-sm text-white hover:bg-green-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="mega-menu-full" aria-expanded="false">
