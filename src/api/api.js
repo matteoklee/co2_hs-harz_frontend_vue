@@ -55,7 +55,45 @@ export async function saveEmission(start, end, transportMedium, group) {
     }
 }
 
+export async function sendStatistic(){
+    try{
+        const data = {
+            'visitorStats': []
+        };
+        data.visitorStats.push({
+            'statisticEntityType': 'totalDuration',
+            'totalDurationEntity': 'totalDuration',
+            'totalDurationEntityAmount': sessionStorage.getItem('visitorTotalTime')
+        });
+        let subpages = JSON.parse(sessionStorage.getItem('visitorSubpages'));
+        for(let i = 0; i < subpages.length; i++){
+            data.visitorStats.push({
+                'statisticEntityType': 'subPageVisit',
+                'subPageVisitEntityName': '/' + subpages[i].url,
+                'subPageVisitEntityTotalVisits': subpages[i].visits
+            });
+        };
+        let buttons = JSON.parse(sessionStorage.getItem('visitorButtons'));
+        for(let i = 0; i < buttons.length; i++){
+            if(buttons[i].clicks > 0) {
+                data.visitorStats.push({
+                    'statisticEntityType': 'buttonClick',
+                    'buttonClickEntityName': buttons[i].button,
+                    'buttonClickEntityAmount': buttons[i].clicks,
+                });
+            }
+
+        }
+        console.log(data);
+        const result = await makeRequest('statistics','POST', data);
+        return result;
+    } catch (error){
+        throw error;
+    }
+}
+
 export default {
     calculateEmission,
-    saveEmission
+    saveEmission,
+    sendStatistic,
 }

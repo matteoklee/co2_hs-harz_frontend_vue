@@ -1,8 +1,8 @@
 <template>
-  <footer class="bg-gray-50 dark:bg-gray-900">
+  <footer class="bg-white border-t border-gray-200">
     <div class="w-full">
       <div class="">
-        <ul class="flex flex-wrap justify-center items-center p-4 text-sm font-normal text-green-500 dark:text-gray-400">
+        <ul class="flex flex-wrap justify-center items-center p-4 text-sm font-normal text-green-500">
           <li>
             <a href="#" class="hover:underline me-2">Unternehmen</a>
           </li>
@@ -24,8 +24,8 @@
           </li>
         </ul>
       </div>
-      <div class="bg-green-700 py-4 flex justify-center items-center">
-        <span class="text-sm text-white dark:text-gray-400">© 2023 Hochschule Harz. All Rights Reserved.</span>
+      <div class="bg-white py-4 flex justify-center items-center"><!-- bg-green-700 -->
+        <span class="text-sm text-black">© 2024 Hochschule Harz. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
