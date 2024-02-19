@@ -2,6 +2,7 @@
 
 
   <form @submit.prevent="calculateEmission()" class="block p-4 border shadow"> <!-- bg-gray-600 -->
+    <!-- <div class="grid gap-4 sm:grid-cols-2 sm:gap-6"> -->
     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
       <div class="col-span-2 text-white flex items-center justify-end">
         <!--
