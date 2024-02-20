@@ -1,7 +1,7 @@
 <template>
 
   <!-- Modal toggle -->
-  <div class="flex justify-center m-5">
+  <div class="flex justify-center m-5 hidden">
     <button id="successButton" data-modal-target="successModal" data-modal-toggle="successModal" class="block text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="button">
       Show success message
     </button>
@@ -44,7 +44,7 @@
           <div class="col-span-1 bg-green-600 flex justify-center items-center">
             <h2 class="my-4 text-xl font-bold text-white dark:text-white text-center">Sie verbrauchen
               <p class="my-4 text-6xl font-bold text-white dark:text-white text-center"> {{ this.calculatedEmission }} kg</p>
-              CO2 mit ihrem Reiseplan.
+              CO2 mit Ihrem Reiseplan.
             </h2>
           </div>
 
@@ -67,7 +67,7 @@
   </section>
 
   <UserFeedback :isActive="isFeedbackActive"></UserFeedback>
-  <SaveEmissionModal :isActive="isSaveEmissionModalActive" @closeModal="closeModal()"></SaveEmissionModal>
+  <SaveEmissionModal :emission="calculatedEmission" :isActive="isSaveEmissionModalActive" @closeModal="closeModal()"></SaveEmissionModal>
 
 </template>
 
