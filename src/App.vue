@@ -7,7 +7,7 @@
     <div v-if="isAdmin">
       <div class="sm:ml-64">
         <div class="pt-4 flex flex-col min-h-screen">
-          <p class="text-right pt-14">LOGGED IN</p>
+          <p class="text-right pt-14 hidden">LOGGED IN</p>
           <router-view class="flex-grow"></router-view>
           <Footer></Footer>
         </div>
@@ -15,7 +15,7 @@
     </div>
     <div v-else>
       <div class="pt-4 flex flex-col min-h-screen">
-        <p class="text-right pt-14">NOT LOGGED IN</p>
+        <p class="text-right pt-14 hidden">NOT LOGGED IN</p>
         <router-view class="flex-grow"></router-view>
         <Footer></Footer>
       </div>

@@ -154,7 +154,7 @@ export default {
       if(this.transportMediumCustomConsumption === false) {
         options.push({ value: "foot", label: "Fuß", disabled: false });
         options.push({ value: "bike", label: "Fahrrad", disabled: false });
-        options.push({ value: "train", label: "Zug", disabled: true });
+        options.push({ value: "train", label: "Zug", disabled: false });
         options.push({ value: "bus_public", label: "Linienbus", disabled: false });
         options.push({ value: "bus_tour", label: "Reisebus", disabled: false });
       };
@@ -166,7 +166,7 @@ export default {
         { value: "2", label: "Diesel", disabled: false },
       ];
 
-      if(this.transportMediumName !== 'bus_public') {
+      if(this.transportMediumName !== 'bus_public' && this.transportMediumName !== 'train') {
         options.push({ value: "1", label: "Benzin", disabled: false });
         if(this.transportMediumCustomConsumption === false) {
           options.push({ value: "3", label: "Hybrid-Diesel", disabled: false });
@@ -175,8 +175,11 @@ export default {
           options.push({ value: "7", label: "LPG", disabled: false });
         }
       }
-      if(this.transportMediumName !== 'car' && this.transportMediumCustomConsumption === false) {
+      if(this.transportMediumName !== 'car' && this.transportMediumName !== 'train' && this.transportMediumCustomConsumption === false) {
         options.push({ value: "6", label: "CNG", disabled: false });
+      }
+      if(this.transportMediumName === 'train') {
+        options.push({ value: "5", label: "Elektro", disabled: false });
       }
 
       return options;
