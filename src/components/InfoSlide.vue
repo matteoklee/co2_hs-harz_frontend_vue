@@ -1,6 +1,6 @@
 <template>
 
-  <div class="flex-grow p-6 m-1 bg-green-700 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="flex-grow p-6 m-1 bg-green-700 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center">
     <a href="#">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
         {{ title }}
@@ -10,7 +10,7 @@
       {{ content }}
     </p>
 
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center mt-8">
       <img src="../assets/geo.png" class="w-32 h-32" alt="Geometrie">
     </div>
     <!--

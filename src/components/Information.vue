@@ -1,9 +1,9 @@
 <template>
 
 
-  <div id="default-carousel" class="relative w-[450px]" data-carousel="slide">
+  <div id="default-carousel" class="relative w-[550px]" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-[450px] overflow-hidden rounded-lg">
+    <div class="relative h-[550px] overflow-hidden rounded-lg">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out flex" data-carousel-item>
         <InfoSlide :title="title1" :content="content1"></InfoSlide>

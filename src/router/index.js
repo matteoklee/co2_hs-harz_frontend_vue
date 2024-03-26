@@ -8,6 +8,7 @@ import NotFound from "../views/NotFound.vue";
 import Help from "../views/Help.vue";
 import Developer from "../views/Developer.vue";
 import Dashboard from "../views/Dashboard.vue";
+import LandingPage from "../views/LandingPage.vue";
 
 const routes = [
     {
@@ -44,6 +45,11 @@ const routes = [
         path: "/dashboard",
         name: "Dashboard",
         component: Dashboard,
+    },
+    {
+        path: "/landing",
+        name: "LandingPage",
+        component: LandingPage,
     },
     {
         path: "/:pathMatch(.*)*",

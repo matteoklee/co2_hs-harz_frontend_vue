@@ -14,7 +14,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="pt-4 flex flex-col min-h-screen">
+      <div class="pt-10 flex flex-col min-h-screen">
         <p class="text-right pt-14 hidden">NOT LOGGED IN</p>
         <router-view class="flex-grow"></router-view>
         <Footer></Footer>
